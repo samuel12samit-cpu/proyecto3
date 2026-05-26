@@ -6,25 +6,25 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #0d1117;
     min-height: 100vh;
     padding: 20px;
 }
 
 h1 {
     text-align: center;
-    color: white;
+    color: #ffffff;
     margin-bottom: 40px;
     font-size: 2.5em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
 }
 
 h2 {
-    color: #333;
+    color: #58a6ff;
     margin: 30px 0 20px 0;
 }
 
-.cards-container {
+.contenedor-tarjetas {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -33,30 +33,32 @@ h2 {
     margin: 0 auto;
 }
 
-.ranking-card {
-    background: white;
+.tarjeta-ranking {
+    background: #21262d;
     border-radius: 15px;
     overflow: hidden;
     width: 350px;
     height: 500px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #30363d;
     display: flex;
     flex-direction: column;
 }
 
-.ranking-card:hover {
+.tarjeta-ranking:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 40px rgba(88, 166, 255, 0.3);
+    border-color: #58a6ff;
 }
 
-.ranking-card img {
+.tarjeta-ranking img {
     width: 100%;
     height: 280px;
     object-fit: cover;
 }
 
-.card-content {
+.contenedor-tarjeta {
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -64,22 +66,22 @@ h2 {
     flex-grow: 1;
 }
 
-.card-content h3 {
-    color: #667eea;
+.contenedor-tarjeta h3 {
+    color: #58a6ff;
     font-size: 1.5em;
     margin-bottom: 10px;
 }
 
-.card-content p {
-    color: #666;
+.contenedor-tarjeta p {
+    color: #c9d1d9;
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 15px;
 }
 
-button, .btn-cyan {
-    background: linear-gradient(135deg, #00bfff, #0099cc);
-    color: white;
+button, .btn-cian {
+    background: #58a6ff;
+    color: #0d1117;
     border: none;
     border-radius: 25px;
     width: 100%;
@@ -93,41 +95,44 @@ button, .btn-cyan {
     text-align: center;
 }
 
-button:hover, .btn-cyan:hover {
-    background: linear-gradient(135deg, #0099cc, #0077aa);
+button:hover, .btn-cian:hover {
+    background: #79c0ff;
     transform: scale(1.05);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
+    background: #21262d;
     margin-bottom: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(88, 166, 255, 0.1);
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid #30363d;
 }
 
 table th {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
+    background: #0d1117;
+    color: #58a6ff;
     padding: 15px;
     text-align: left;
     font-weight: bold;
+    border-bottom: 2px solid #58a6ff;
 }
 
 table td {
     padding: 12px 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #30363d;
+    color: #c9d1d9;
 }
 
 table tr:hover {
-    background-color: #f5f5f5;
+    background-color: #30363d;
 }
 
-.home-btn {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
+.btn-inicio {
+    background: #58a6ff;
+    color: #0d1117;
     padding: 10px 25px;
     border-radius: 20px;
     text-decoration: none;
@@ -136,7 +141,8 @@ table tr:hover {
     transition: all 0.3s ease;
 }
 
-.home-btn:hover {
+.btn-inicio:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4);
+    background: #79c0ff;
 }
