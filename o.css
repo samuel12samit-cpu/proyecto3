@@ -1,148 +1,233 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Estilos globales */
 body {
-    font-family: 'Arial', sans-serif;
-    background: #0d1117;
-    min-height: 100vh;
+    background-color: #050505;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
     padding: 20px;
 }
 
 h1 {
+    color: #00f2ff;
     text-align: center;
-    color: #ffffff;
     margin-bottom: 40px;
-    font-size: 2.5em;
-    text-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
 }
 
-h2 {
-    color: #58a6ff;
-    margin: 30px 0 20px 0;
-}
-
+/* Contenedor principal de las tarjetas */
 .contenedor-tarjetas {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.tarjeta-ranking {
-    background: #21262d;
-    border-radius: 15px;
-    overflow: hidden;
-    width: 350px;
-    height: 500px;
-    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #30363d;
-    display: flex;
-    flex-direction: column;
-}
-
-.tarjeta-ranking:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(88, 166, 255, 0.3);
-    border-color: #58a6ff;
-}
-
-.tarjeta-ranking img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-}
-
-.contenedor-tarjeta {
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
 }
 
+/* Base de la tarjeta con efecto de borde animado */
+.tarjeta-ranking {
+    position: relative;
+    width: 320px;
+    background: #000000;
+    border-radius: 16px;
+    padding: 3px; /* El grosor del borde */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Efecto hover: Zoom y sombra brillante */
+.tarjeta-ranking:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+}
+
+/* Animación del borde RGB */
+.tarjeta-ranking::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(#00f2ff, #0066ff, #7000ff, #00f2ff);
+    animation: rotarRGB 6s linear infinite;
+    z-index: -2;
+}
+
+/* Fondo interior de la tarjeta */
+.contenedor-tarjeta {
+    background: #050505;
+    border-radius: 13px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Imagen dentro de la tarjeta */
+.contenedor-tarjeta img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Estilos de texto */
 .contenedor-tarjeta h3 {
-    color: #58a6ff;
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    color: #ffffff;
+    margin: 15px 20px 5px 20px;
 }
 
 .contenedor-tarjeta p {
-    color: #c9d1d9;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 15px;
+    color: #b0b0b0;
+    margin: 5px 20px 15px 20px;
+    font-size: 0.9em;
 }
 
-button, .btn-cian {
-    background: #58a6ff;
-    color: #0d1117;
-    border: none;
-    border-radius: 25px;
-    width: 100%;
-    padding: 12px 20px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
+/* Botón Cian */
+.btn-cian {
+    margin: 10px 20px 20px 20px;
+    padding: 10px;
+    background: #0066ff;
+    color: white;
+    text-align: center;
     text-decoration: none;
-    display: inline-block;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-cian:hover {
+    background: #00f2ff;
+    color: #000000;
+}
+
+/* Animación de rotación del gradiente */
+@keyframes rotarRGB {
+    100% { transform: rotate(360deg); }
+}
+
+
+/* --- ESTILOS GENERALES Y FUENTE --- */
+body {
+    background-color: #050505;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #00f2ff;
     text-align: center;
 }
 
-button:hover, .btn-cian:hover {
-    background: #79c0ff;
-    transform: scale(1.05);
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #21262d;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 10px rgba(88, 166, 255, 0.1);
-    border-radius: 8px;
+/* --- TARJETAS (Efecto RGB Sutil) --- */
+.tarjeta-ranking {
+    position: relative;
+    width: 320px;
+    background: #000000;
+    border-radius: 16px;
+    padding: 3px; 
     overflow: hidden;
-    border: 1px solid #30363d;
+    transition: transform 0.3s ease;
+    z-index: 1;
 }
 
-table th {
-    background: #0d1117;
-    color: #58a6ff;
+/* El efecto sutil del borde */
+.tarjeta-ranking::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(#00aaff, #0044aa, #5500aa, #00aaff); 
+    animation: rotarRGB 8s linear infinite;
+    z-index: -2;
+    opacity: 0.6; /* Sutil, no quema la vista */
+}
+
+@keyframes rotarRGB {
+    100% { transform: rotate(360deg); }
+}
+
+/* --- TABLAS (Para jugadores.html, speedrun.html, etc.) --- */
+/* --- ESTILOS GENERALES Y FUENTE --- */
+body {
+    background-color: #050505;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #00f2ff;
+    text-align: center;
+}
+
+/* --- EFECTO RGB PARA TABLAS (Sin usar clases) --- */
+/* Envolvemos la tabla en un contenedor dinámico o aplicamos el efecto al borde */
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: #050505; /* Fondo negro profundo */
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 3px; /* Espacio para el borde RGB */
+    position: relative;
+    border-spacing: 0;
+    overflow: hidden;
+    /* Efecto de resplandor sutil */
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.2);
+}
+
+/* El borde RGB giratorio aplicado al contenedor de la tabla */
+table::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(#00aaff, #0044aa, #5500aa, #00aaff); 
+    animation: rotarRGB 8s linear infinite;
+    z-index: -1;
+    opacity: 0.5; /* Sutil y elegante */
+}
+
+/* Estilo interno de la tabla */
+th {
+    background-color: #0044aa;
     padding: 15px;
     text-align: left;
-    font-weight: bold;
-    border-bottom: 2px solid #58a6ff;
+    border-bottom: 2px solid #00f2ff;
 }
 
-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #30363d;
-    color: #c9d1d9;
+td {
+    padding: 15px;
+    border-bottom: 1px solid #222;
+    background: #121212; /* Fondo de las celdas para que resalten sobre el borde */
 }
 
-table tr:hover {
-    background-color: #30363d;
+tr:hover td {
+    background-color: #1a1a1a;
+    transition: 0.3s;
 }
 
-.btn-inicio {
-    background: #58a6ff;
-    color: #0d1117;
-    padding: 10px 25px;
-    border-radius: 20px;
-    text-decoration: none;
+@keyframes rotarRGB {
+    100% { transform: rotate(360deg); }
+}
+
+/* --- BOTÓN DE NAVEGACIÓN --- */
+a {
     display: inline-block;
-    margin: 20px 0;
-    transition: all 0.3s ease;
+    margin: 20px;
+    padding: 10px 20px;
+    background: #0066ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.btn-inicio:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4);
-    background: #79c0ff;
+a:hover {
+    background: #00f2ff;
+    color: #050505;
 }

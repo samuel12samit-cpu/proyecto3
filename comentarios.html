@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html><section id="comentarios">
+    <h2>☁️ Comunidad Gamer</h2>
+    <p>Déjanos tu opinión, sugerencias o apoyo a la comunidad.</p>
+
+    <form action="#" method="POST">
+        <label for="nombre">Nickname:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej. Menard dominicano" required>
+        <br><br>
+
+        <label for="juego">Juego favorito:</label>
+        <select id="juego" name="juego" required>
+            <option value="">-- Selecciona un juego --</option>
+            <option value="freefire">Free Fire</option>
+            <option value="minecraft">Minecraft</option>
+            <option value="fortnite">Fortnite</option>
+            <option value="brawlhalla">Brawlhalla</option>
+            <option value="apex">Apex Legends</option>
+            <option value="gtav">GTA V</option>
+            <option value="roblox">Roblox</option>
+            <option value="tekken8">Tekken 8</option>
+        </select>
+        <br><br>
+
+        <label for="opinion">Tu comentario:</label>
+        <br>
+        <textarea id="opinion" name="opinion" rows="5" placeholder="Me gustó mucho el juego por que..." required></textarea>
+        
+        <br>
+        <button type="submit">Enviar Comentario</button>
+    </form>
+</section>
+
+<hr>
+
+<section id="reportes">
+    <h2>⚠️ Reporte de Errores</h2>
+    <p>¿Un récord cambió o algo no se ve bien? Avísanos.</p>
+
+    <form action="#" method="POST">
+        <label for="nick-reporte">Tu nickname:</label>
+        <input type="text" id="nick-reporte" name="nick" placeholder="Tu nickname gamer" required>
+        <br><br>
+
+        <label for="tipo-error">Tipo de error:</label>
+        <select id="tipo-error" name="tipo-error" required>
+            <option value="">-- Selecciona el problema --</option>
+            <option value="info">Información incorrecta (Récord o Jugador)</option>
+            <option value="tooltip">El Tooltip se corta o no se ve bien</option>
+            <option value="responsivo">Problema visual en celular</option>
+            <option value="otro">Otro error técnico</option>
+        </select>
+        <br>
+       <label for="descripcion-error">Describe el error:</label></form>
+        <textarea id="descripcion-error" name="descripcion" rows="5" placeholder="Describe el error que encontraste..."></textarea>
+        <br><br>
+        
+        <button type="submit">Enviar Reporte</button>
+    </form>
+</section>
